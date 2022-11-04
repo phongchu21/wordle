@@ -14,6 +14,8 @@
 html,
 body {
   height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: hsl(240, 3%, 7%);
 }
 
 img,
@@ -36,7 +38,56 @@ select {
   }
 }
 
-body {
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeSpeed;
+.board
+{
+  display: grid;
+  align-content: center;
+  flex-grow: 1;
+  grid-template-rows: repeat(8, 4em);
+  gap: 0.25em;
+  margin-bottom: 1em;
+  margin-top: 100px;
 }
+
+.board__row
+{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(5, 4em);
+  gap: 0.25em;
+}
+
+.tile
+{
+  font-size: 2em;
+  color: white;
+  border: .05em solid hsl(240, 2%, 23%);
+  align-content: center;
+  text-transform: uppercase;
+  font-weight:bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+.tile--absent
+{
+  border: none;
+  background-color: hsl(240, 2%, 23%)
+}
+
+.tile--present
+{
+  border: none;
+  background-color: hsl(49 , 51%, 47%)
+}
+
+.tile--correct
+{
+  border: none;
+  background-color: hsl(115, 29%, 43%)
+}
+
+
+
+
