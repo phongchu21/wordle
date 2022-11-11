@@ -104,7 +104,7 @@ select {
   background-color: var(--green-correct);
 }
 
-@keyframes key--flip {
+@keyframes flip {
   0% {
     transform: perspective(400px) rotate3d(1, 0, 0, 0deg);
   }
@@ -115,9 +115,10 @@ select {
     transform: perspective(400px) rotate3d(1, 0, 0, 180deg);
   }
 }
-.flip {
+
+.tile--flip {
   backface-visibility: visible;
-  animation-name: key--flip;
+  animation-name: flip;
   animation-duration: 2s;
 }
 
