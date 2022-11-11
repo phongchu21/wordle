@@ -115,7 +115,7 @@ select {
     margin: 0 auto 8px;
     touch-action: manipulation;
   }
-  .keyboard__row button {
+  .key {
     font-weight: bold;
     border:0;
     height: 58px;
@@ -128,7 +128,7 @@ select {
     border-radius: 4px ;
     user-select: none;
   }
-  .keyboard__row button.key--special{
+  .key--special{
     flex-grow: 1.5;
   }
   .spacer-row{
