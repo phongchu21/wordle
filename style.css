@@ -87,6 +87,55 @@ select {
   border: none;
   background-color: hsl(115, 29%, 43%)
 }
+#keyboard{
+	text-align:center;
+	margin-top: 5px;
+}
+
+#topKeys, #midKeys, #botKeys{
+	display: flex;
+	justify-content:center;
+}
+
+.keyboardKey_s, .keyboardKey_m, .keyboardKey_l{
+	background-color: #c5c5c5;
+	font-size: 30px;
+	height: 32px;
+	padding: 5px 0;
+	margin: 2.5px;
+	display: flex;
+	justify-content: center;
+	font-family: arial;
+	cursor: pointer;
+}
+
+.keyboardKey_s{
+	width: 52px;
+}
+
+.keyboardKey_m{
+	width: 58px;
+}
+
+.keyboardKey_l{
+	width: 81px;
+}
+
+
+.blockGreen{
+	background-color: #35a535;
+	color:#fff;
+}
+
+.blockGrey{
+	background-color: #737373;
+	color:#fff;
+}
+
+.blockGold{
+	background-color: #d7bf4a;
+	color:#fff;
+}
 
 
 
