@@ -104,6 +104,37 @@ select {
   background-color: var(--green-correct);
 }
 
+.keyboard{
+  height: 200px;
+  }
+  
+  .keyboard__row{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto 8px;
+    touch-action: manipulation;
+  }
+  .keyboard__row button {
+    font-weight: bold;
+    border:0;
+    height: 58px;
+    cursor: pointer;
+    background-color: rgb(129, 131, 132);
+    color:antiquewhite;
+    flex-grow: 1;
+    text-transform: uppercase;
+    margin-right: 6px ; 
+    border-radius: 4px ;
+    user-select: none;
+  }
+  .keyboard__row button.key--special{
+    flex-grow: 1.5;
+  }
+  .spacer-row{
+    flex-grow: 0.5;
+  }
+
 @keyframes flip {
   0% {
     transform: perspective(400px) rotate3d(1, 0, 0, 0deg);
@@ -121,6 +152,7 @@ select {
   animation-name: flip;
   animation-duration: 2s;
 }
+
 
 
 
