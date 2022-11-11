@@ -43,7 +43,7 @@ select {
   display: grid;
   align-content: center;
   flex-grow: 1;
-  grid-template-rows: repeat(8, 4em);
+  grid-template-rows: repeat(6, 4em);
   gap: 0.25em;
   margin-bottom: 1em;
   margin-top: 100px;
