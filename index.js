@@ -10,13 +10,23 @@ async function playGame() {
 }
 
 // TODO: GET USER GUESS WORD
+let dictionary = [];
+(async function fetchDictionary() {
+  const res = await fetch("./dictionary.json");
+  dictionary = await res.json();
+})();
+
 function getUserGuess() {
   // Lay input tu ban phim
   let input = "";
-  while (input.length != 5) {
+  while (inputNotValid(input)) {
     input = prompt("Enter 5 letter word:");
   }
   return input;
+}
+
+function inputNotValid(input) {
+  return input.length != 5 || !dictionary.includes(input);
 }
 
 // TODO: PRINT GUESS RESULT
