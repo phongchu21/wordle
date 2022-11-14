@@ -2,19 +2,27 @@ async function playGame() {
   const keyword = await getRandomWord();
   console.log("Keyword:", keyword);
 
-  const userGuess = getUserGuess();
-  console.log("User guess:", userGuess);
+  for (let currRow = 1; currRow <= 6; currRow++) {
+    const userGuess = getUserGuess();
+    console.log("User guess:", userGuess);
 
-  const result = checkUserGuess(userGuess, keyword);
-  printResult(result);
+    const result = checkUserGuess(userGuess, keyword);
+    printResult(result);
+
+    const guessIsCorrect = result.every((res) => res == "🟢");
+    if (guessIsCorrect) {
+      console.log("Win!!");
+      break;
+    }
+  }
 }
 
 // TODO: GET USER GUESS WORD
 let dictionary = [];
-(async function fetchDictionary() {
+async function fetchDictionary() {
   const res = await fetch("./dictionary.json");
   dictionary = await res.json();
-})();
+}
 
 function getUserGuess() {
   // Lay input tu ban phim
@@ -35,16 +43,25 @@ function printResult(res) {
 }
 
 function checkUserGuess(userGuess, keyword) {
-  let res = "";
+  let checkKeyword = keyword;
+  let res = ["🔴", "🔴", "🔴", "🔴", "🔴"];
+
   for (let i = 0; i < 5; i++) {
-    if (userGuess.charAt(i) === keyword.charAt(i)) {
-      res += "🟢";
-    } else if (keyword.includes(userGuess.charAt(i))) {
-      res += "🟡";
-    } else {
-      res += "🔴";
+    if (userGuess.charAt(i) === checkKeyword.charAt(i)) {
+      res[i] = "🟢";
+      checkKeyword = checkKeyword.slice(0, i) + "-" + checkKeyword.slice(i + 1);
     }
+    // console.log(i, checkKeyword, res);
   }
+
+  for (let i = 0; i < 5; i++) {
+    if (checkKeyword.includes(userGuess.charAt(i)) && res[i] != "🟢") {
+      res[i] = "🟡";
+      checkKeyword = checkKeyword.slice(0, i) + "-" + checkKeyword.slice(i + 1);
+    }
+    // console.log(i, checkKeyword, res);
+  }
+
   return res;
 }
 
@@ -59,4 +76,4 @@ function random_item(items) {
   return items[Math.floor(Math.random() * items.length)];
 }
 
-playGame();
+fetchDictionary().then(playGame());
