@@ -134,6 +134,25 @@ body {
 .spacer-row {
   flex-grow: 0.5;
 }
+.key, .key--special, .key--absent, .key--present, .key--correct{
+	color:#fff;
+	transform: rotateX(360deg);
+}
+
+.key--correct{
+	background-color: #35a535;
+}
+
+.key--absent{
+	background-color: #737373;
+}
+
+.key--special{
+	background-color: #d7bf4a;
+}
+.key--present {
+	background-color: #000;
+}
 
 /* ANIMATIONS */
 
