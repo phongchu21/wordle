@@ -263,12 +263,12 @@ let dictionary = [];
 let targetWords = [];
 
 async function updateDictionary() {
-  const response = await fetch("./dictionary.json");
+  const response = await fetch("./data/dictionary.json");
   dictionary = await response.json();
 }
 
 async function updateTargetWords() {
-  const response = await fetch("./targetWords.json");
+  const response = await fetch("./data/targetWords.json");
   targetWords = await response.json();
 }
 
@@ -279,7 +279,7 @@ async function testGuessChecker() {
   // https://github.com/yukosgiti/wordle-tests
   let errorCount = 0;
 
-  const response = await fetch("./tests.json");
+  const response = await fetch("./data/tests.json");
   const bigTestCase = await response.json();
 
   bigTestCase.forEach((testWord) => {
