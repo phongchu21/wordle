@@ -135,6 +135,57 @@ select {
   .spacer-row{
     flex-grow: 0.5;
   }
+#keyboard{
+	text-align:center;
+	margin-top: 5px;
+}
+
+#topKeys, #midKeys, #botKeys{
+	display: flex;
+	justify-content:center;
+}
+
+.keyboard_row, .key, .key_special{
+	background-color: #c5c5c5;
+	font-size: 30px;
+	height: 32px;
+	padding: 5px 0;
+	margin: 2.5px;
+	display: flex;
+	justify-content: center;
+	font-family: arial;
+	cursor: pointer;
+}
+
+.keyboard_row{
+	width: 52px;
+}
+
+.key{
+	width: 58px;
+}
+
+.key--special{
+	width: 81px;
+}
+
+
+.blockGreen, .blockGrey, .blockGold{
+	color:#fff;
+	transform: rotateX(360deg);
+}
+
+.blockGreen{
+	background-color: #35a535;
+}
+
+.blockGrey{
+	background-color: #737373;
+}
+
+.blockGold{
+	background-color: #d7bf4a;
+}
 
 @keyframes flip {
   0% {
