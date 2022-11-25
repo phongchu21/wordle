@@ -15,6 +15,8 @@ let guesses = [
   ["", "", "", "", ""],
 ];
 
+
+
 // gọi hàm getUserGuess lấy từ mà người dùng đoán dưới dạng chuỗi
 function getUserGuess(row = currentRow) {
   return guesses[row].join("");
@@ -105,8 +107,11 @@ function updateTileLetter(
 ) {
   // TODO: Cập nhập ký tự letter lên Board
   // dựa vào row và tile để xác định vị trí cần thêm vào
+  row++;
+  const nextRow = document.getElementById('row-' + row);
+  const nextTile = nextRow.querySelectorAll('span.tile');
+  nextTile[tile].textContent=letter
 
-  // Gợi ý: Thay đổi nội dung trong thẻ tile tương ứng
 }
 
 function canAddLetter(tile = currentTile) {
