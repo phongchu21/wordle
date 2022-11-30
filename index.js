@@ -253,7 +253,15 @@ function addKeysColor(result, guessRow = guesses[currentRow]) {
 
 // TODO: Tạo sự kiện cho các phím trên bàn phím thực
 // có thể xử lý được như dùng bàn phím trên trang web
+addEventListener("keyup",function(event){
 
+  if(event.keyCode >= 65 && event.keyCode <= 90)
+    addLetter(event.key);
+  else if (event.keyCode == 13)
+    submitGuess();
+  else if (event.keyCode == 8)
+    deleteLetter();
+})
 // Chỉ yêu cầu các phím chữ cái, nút xoá (backspace) và enter
 
 // -------------------------------------------------------------
