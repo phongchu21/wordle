@@ -232,7 +232,13 @@ function addTilesColor(result, row = currentRow) {
 function addTilesAnimation(row = currentRow) {
   // TODO: Thêm hiệu ứng hiển thị tiles trên row hiện tại
   // Lưu ý có delay giữa các phím. Chú ý tương thích khi thêm màu
-
+   for(let i = 0; i < 5; i++) {
+    const tile = document.getElementById("tile");
+    const tileColor = addTilesColor(tile);
+    tile.classList.add("tile--flip");
+    tile.style.backgroundColor = tileColor;
+    tile.style.animationDelay = "1s";
+  }
   // Gợi ý: Thêm lớp tile--flip vào tile
 }
 
