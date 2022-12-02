@@ -253,6 +253,11 @@ function addKeysColor(result, guessRow = guesses[currentRow]) {
 
 // TODO: Tạo sự kiện cho các phím trên bàn phím thực
 // có thể xử lý được như dùng bàn phím trên trang web
+for(i = 0; i < result.length; i++){
+		let letter = result[i].toUpperCase();
+		result.push(letter);
+  let blockClass = 'tile--present';
+}
 addEventListener("keyup",function(event){
 
   if(event.keyCode >= 65 && event.keyCode <= 90)
