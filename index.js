@@ -247,6 +247,38 @@ function addKeysColor(result, guessRow = guesses[currentRow]) {
 }
 
 // TODO: Thêm animation hiển thị tile khi nhập phím và error khi nhập không hợp lệ
+function checkAnswer(wordRow, answer){
+	let result = [];
+
+	for(i = 0; i < result.length; i++){
+		let letter = result[i].toUpperCase();
+		result.push(letter);
+		let blockClass = 'tile--present';
+		if(chosenWord.toUpperCase().includes(letter)){
+			if(chosenWord[i].toUpperCase() === letter){
+				score++;
+				blockClass = ' tile--correct';
+				if(count(answer, letter) > count(chosenWord, letter)){
+					for(j = 0; j < wordRow.childNodes.length; j++){
+						if(wordRow.childNodes[j].innerText == letter && wordRow.childNodes[j].className == 'row_block  tile--present'){
+							wordRow.childNodes[j].className = 'row_block  tile--present';
+							let index = result.indexOf(letter);
+							if (index !== -1) {
+								result.splice(index, 1);
+							}
+						}
+					}
+				}
+			}else{
+				if(countOccurrences(result, letter) <= count(chosenWord, letter)){
+					blockClass = ' tiles--absent';
+				}
+				else{
+					blockClass = ' tile--present';
+				}
+			}
+		}
+  }
 
 // -------------------------------------------------------------
 // REAL KEYBOARD
