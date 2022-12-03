@@ -137,7 +137,7 @@ function submitGuess() {
 
     if (guessIsCorrect(result)) {
       isWinning = true;
-      console.log("Guess is correct");
+      showWinningMessage();
     } else {
       console.log("Guess is NOT correct");
 
@@ -146,11 +146,12 @@ function submitGuess() {
       currentTile = 0;
 
       if (gameIsOver()) {
-        console.log(`You lose! Keyword is ${keyword}`);
+        showLosingMessage();
       }
     }
   } else {
     console.log(`Guess '${getUserGuess()}' is not valid`);
+    shakeTiles();
   }
 }
 
@@ -166,6 +167,14 @@ function guessIsCorrect(result) {
 
 function gameIsOver() {
   return isWinning || currentRow > 5;
+}
+
+function showWinningMessage() {
+  console.log("Guess is correct");
+}
+
+function showLosingMessage() {
+  console.log(`You lose! Keyword is ${keyword}`);
 }
 
 // -------------------------------------------------------------
@@ -266,7 +275,9 @@ function addKeysColor(result, guessRow = guesses[currentRow]) {
   // vào các phím tương ứng
 }
 
-// TODO: Thêm animation hiển thị tile khi nhập phím và error khi nhập không hợp lệ
+function shakeTiles(row = currentRow) {
+  // TODO: Thêm animation hiển thị tile khi nhập phím và error khi nhập không hợp lệ
+}
 
 // -------------------------------------------------------------
 // REAL KEYBOARD
