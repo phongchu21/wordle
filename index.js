@@ -133,7 +133,7 @@ function submitGuess() {
     // chứa 1 trong 3 giá trị correct, present hoặc absent
 
     addTilesColor(result);
-    addTilesAnimation;
+    addTilesAnimation();
 
     if (guessIsCorrect(result)) {
       isWinning = true;
@@ -232,9 +232,11 @@ function addTilesColor(result, row = currentRow) {
 function addTilesAnimation(row = currentRow) {
   // TODO: Thêm hiệu ứng hiển thị tiles trên row hiện tại
   // Lưu ý có delay giữa các phím. Chú ý tương thích khi thêm màu
-   for(let i = 0; i < 5; i++) {
-    const tile = document.getElementById("tile");
-    const tileColor = addTilesColor(tile);
+  const boardRow = document.getElementById(`row-${row + 1}`);
+  const tiles = boardRow.querySelectorAll(".tile");
+
+  for (let i = 0; i < 5; i++) {
+    const tile = tiles[i];
     tile.classList.add("tile--flip");
     tile.style.backgroundColor = tileColor;
     tile.style.animationDelay = "1s";
@@ -244,7 +246,7 @@ function addTilesAnimation(row = currentRow) {
 
 function addKeysColor(result, guessRow = guesses[currentRow]) {
   // TODO: Cập nhập màu sắc của các phím đã vừa ấn
-  
+
   // Hàm này truyền vào một mảng 5 phần tử chính là 5 ký tự mà người dùng vừa nhập
   // Đổi màu các phím guessRow trên bàn phím dựa vào kết quả result
   for (i = 0; i < 5; i++)
