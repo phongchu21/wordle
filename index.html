@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <div class="wordle-app-game">
+  <main class="wordle-app-game">
     <div class="board">
       <div id="row-1" class="board__row">
         <span class="tile"></span>
@@ -103,7 +103,15 @@
         <button id="key-delete" class="key key--special">⌫</button>
       </div>
     </div>
-  </div>
+  </main>
+
+  <aside class="modal">
+    <button class="modal__closeIcon">x</button>
+    <h1 class="modal__status">You win</h1>
+    <p class="modal__answer">The answer is AUDIO</p>
+    <div class="modal__stats"></div>
+    <button class="modal__pillBtn">New game</button>
+  </aside>
 </body>
 
 </html>

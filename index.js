@@ -171,10 +171,12 @@ function gameIsOver() {
 
 function showWinningMessage() {
   console.log("Guess is correct");
+  showModal();
 }
 
 function showLosingMessage() {
   console.log(`You lose! Keyword is ${keyword}`);
+  showModal();
 }
 
 // -------------------------------------------------------------
@@ -278,6 +280,15 @@ function addKeysColor(result, guessRow = guesses[currentRow]) {
 function shakeTiles(row = currentRow) {
   // TODO: Thêm animation hiển thị tile khi nhập phím và error khi nhập không hợp lệ
 }
+
+// -------------------------------------------------------------
+// MODAL
+
+const closeModalIcon = document.querySelector(".modal__closeIcon");
+closeModalIcon.addEventListener("click", hideModal());
+
+function showModal() {}
+function hideModal() {}
 
 // -------------------------------------------------------------
 // REAL KEYBOARD
