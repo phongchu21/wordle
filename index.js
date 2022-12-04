@@ -235,7 +235,18 @@ function cutLetter(word, index) {
 function addTilesColor(result, row = currentRow) {
   // TODO: Cập nhập màu sắc của các tiles trên row hiện tại theo result
   // Chú ý tương thích với hiệu ứng
-
+  result = checkUserGuess();
+  const boardRow = document.getElementById(`row-${row + 1}`);
+  const tiles = boardRow.querySelectorAll(".tile");
+  for(let i = 0; i < 5; i++){
+    const tile = tiles[i];
+    if(result[i] == correct){
+      tile.classList.add('tile--correct');
+    } else if(result[i] == present){
+      tile.classList.add('tile--present');
+    }else{
+      tile.classList.add('tile--absent')
+    }
   // Gợi ý: Thêm các lớp tile--absent, tile--present, và tile--correct
   // vào các tile tương ứng
 }
