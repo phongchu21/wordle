@@ -288,6 +288,35 @@ function addKeysColor(result, guessRow = guesses[currentRow]) {
 
 function shakeTiles(row = currentRow) {
   // TODO: Thêm animation hiển thị tile khi nhập phím và error khi nhập không hợp lệ
+if (letter === -1) {
+		currentTile = 'grey'
+	} else {
+		if (userGuess[i] === result[i]) {
+			// shade box green 
+			currentTile = 'green'
+		} else {
+			// shade box yellow
+			currentTile = 'yellow'
+		}
+
+		result[letter] = "#"
+	}
+}
+  function userGuess () {
+    if (userGuess.length != 5) {
+        alert("Not enough letters!")
+        return
+    }
+
+    if (!dictionary.includes(userGuess)) {
+        alert("Word not in list!")
+        return
+    }
+ function addDelay{
+    var animationDelay = 500;
+    setTimeout(function() => {
+	      userGuess(letter)
+  }, animationDelay)
 }
 
 // -------------------------------------------------------------
