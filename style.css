@@ -49,7 +49,14 @@ body {
 }
 
 /* OVERALL LAYOUT */
-.wordle-app-game {
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  width: 100%;
   max-width: 600px;
   margin: 0 auto;
   display: flex;
@@ -58,8 +65,12 @@ body {
   height: 100%;
 }
 
+aside {
+  position: absolute;
+  top: 0;
+}
+
 .board {
-  flex-grow: grow;
   height: 100%;
 }
 
@@ -163,6 +174,17 @@ body {
 
 .key--present {
   background-color: var(--yellow-present);
+}
+
+/* MODAL */
+
+.modal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ANIMATIONS */

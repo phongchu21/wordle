@@ -12,7 +12,11 @@
 </head>
 
 <body>
-  <main class="wordle-app-game">
+  <header>
+    <button onclick="DarkMode()">Dark mode</button>
+  </header>
+
+  <main>
     <div class="board">
       <div id="row-1" class="board__row">
         <span class="tile"></span>
@@ -111,7 +115,6 @@
     <p class="modal__answer">The answer is AUDIO</p>
     <div class="modal__stats"></div>
     <button class="modal__pillBtn">New game</button>
-    <button onclick="DarkMode()">Dark mode</button>
   </aside>
 </body>
 
