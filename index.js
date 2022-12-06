@@ -329,6 +329,12 @@ function addKeysColor(result, guessRow = guesses[currentRow]) {
 
 function shakeTiles(row = currentRow) {
   // TODO: Thêm animation hiển thị tile khi nhập phím và error khi nhập không hợp lệ
+  const flipAnimation = 500
+	const letter = tile.dataset.letter
+	const key = keyboard.querySelector(`[data-key="${letter}"i]`)
+	setTimeout(() => {
+	   tile.classList.add("tile--flip")
+	}, (index * flipAnimation) / 2)
 }
 
 // -------------------------------------------------------------
