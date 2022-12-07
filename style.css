@@ -221,20 +221,40 @@ header {
 
 @keyframes flip {
   0% {
-    transform: perspective(400px) rotate3d(1, 0, 0, 0deg);
+    transform: scaleY(1);
   }
 
   50% {
-    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: scaleY(0);
   }
 
   100% {
-    transform: perspective(400px) rotate3d(1, 0, 0, 180deg);
+    transform: scaleY(1);
   }
 }
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  20%,
+  60% {
+    transform: translateX(-10px);
+  }
+
+  40%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+  
 
 .tile--flip {
-  backface-visibility: visible;
   animation-name: flip;
-  animation-duration: 2s;
+  animation-duration: 1s;
+}
+.title--shake {
+  animation-name: shake;
+  animation-duration: 0.5s;
 }
