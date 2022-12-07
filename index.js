@@ -276,6 +276,8 @@ function addTilesColor(result, row = currentRow) {
   result = checkUserGuess();
   const boardRow = document.getElementById(`row-${row + 1}`);
   const tiles = boardRow.querySelectorAll(".tile");
+  setTimeout(()=>{
+	tile.classList.add('tile-flip')
   for(let i = 0; i < 5; i++){
     const tile = tiles[i];
     if(result[i] == correct){
@@ -288,6 +290,7 @@ function addTilesColor(result, row = currentRow) {
     // Gợi ý: Thêm các lớp tile--absent, tile--present, và tile--correct
     // vào các tile tương ứng
   }
+  },500 * index)
 }
 
 function addTilesAnimation(row = currentRow) {
