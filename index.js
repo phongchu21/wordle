@@ -329,6 +329,13 @@ function addKeysColor(result, guessRow = guesses[currentRow]) {
 
 function shakeTiles(row = currentRow) {
   // TODO: Thêm animation hiển thị tile khi nhập phím và error khi nhập không hợp lệ
+  const boardRow = document.getElementById(`row-${row + 1}`);
+  const tiles = boardRow.querySelectorAll(".tile");
+
+  for (let i = 0; i < 5; i++) {
+    const tile = tiles[i];
+    tile.classList.add("tile--shake");
+  }
 }
 
 // -------------------------------------------------------------
