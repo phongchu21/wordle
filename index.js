@@ -276,6 +276,8 @@ function addTilesColor(result, row = currentRow) {
   result = checkUserGuess();
   const boardRow = document.getElementById(`row-${row + 1}`);
   const tiles = boardRow.querySelectorAll(".tile");
+  tile.classList.add('tile--flip');
+	tile.style.animationDelay = "0.5s";
   for(let i = 0; i < 5; i++){
     const tile = tiles[i];
     if(result[i] == correct){
