@@ -302,6 +302,9 @@ function addTilesAnimation(row = currentRow) {
     //tile.style.backgroundColor = tileColor;
     tile.style.animationDelay = "1s";
   }
+  const animationDuration = 500; //ms
+	tile.classList.add('tile--shake');
+	tile.style.animationDelay = `${(i * animationDuration) / 2}ms`;
   // Gợi ý: Thêm lớp tile--flip vào tile
 }
 
