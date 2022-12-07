@@ -254,7 +254,7 @@ header {
   animation-name: flip;
   animation-duration: 1s;
 }
-.title--shake {
+.tile--shake {
   animation-name: shake;
   animation-duration: 0.5s;
 }
